@@ -414,3 +414,38 @@ public static double Topla() //geriye değer döndüren
 //gunsayisi = DateTime.DaysInMonth(1990, 1);
 //gunsayisi = DateTime.DaysInMonth(1988, 2);
 #endregion
+#region Interface, enum, class, abstract, virtual
+Ogrenci ogrenci = new Ogrenci();
+ogrenci.Topla();
+
+public enum Cinsiyet
+{
+    Kadin = 0,
+    Erkek = 1,
+}
+public class Kisi //Classlar erişim belirteci koyulmazsa internal olur -> class Kisi deseydik internaldı
+{
+    protected string ad;
+    private string soyad;
+
+}
+
+public class Ogrenci : Kisi //Kisi sınıfını implement ettik
+{
+
+}
+public interface IKisi
+{
+    string Ad { get; set; }
+    string Soyad { get; set; }
+}
+abstract class Kisi //sadece ortak özellikleri tutsun istiyorsak abstract
+{
+    public int Id {  get; set; }
+    public string Ad { get; set; }
+
+    public string Soyad { get; set;}
+
+
+}
+#endregion
