@@ -55,6 +55,8 @@
 #endregion
 #region Akış Kontrolü
 using System;
+using System.ComponentModel.Design;
+using System.Security;
 using System.Text;
 
 var etkinligeKatilacakmi = true;
@@ -551,4 +553,75 @@ public class Ogrenci
         }//ogrenci. dediğimizde gelmez! Ogrenci. dediğimşzde gelir çünkü nesne oluştmamıza yani nesne instanceına gerek duymaz. static metotlarda sadece static şeylere erişebiliriz ancak static olmayanlardan da staticlere ulaşabiliriz.
     }
 }
+
+// Programlama Ödev 1
+//public class OtomobilFiyat
+//{
+//    static void Main()
+//    {
+//        Console.WriteLine("Motor tipini giriniz(içten yanmalı veya elektrikli): ");
+//        string motorTipi = Console.ReadLine();
+
+//        Console.WriteLine("Silindir hacmini cmküp cinsinden giriniz");
+//        double silindirHacmi= Convert.ToDouble(Console.ReadLine());
+
+//        Console.WriteLine("Vergisiz satış tutarını TL Cinsinden giriniz:");
+//        double vergisizTutar = Convert.ToDouble(Console.ReadLine());
+
+//        double sonuc = HesaplaOtomobilFiyat(motorTipi, silindirHacmi, vergisizTutar);
+
+//        if(sonuc != -1)
+//        {
+//            Console.WriteLine($"Otomobil satış fiyatı: {sonuc:F2} TL");
+
+//        }
+//        else
+//        {
+//            Console.WriteLine("Geçersiz motor tipi!");
+//        }
+//    }
+//    static double HesaplaOtomobilFiyat(string motorTipi, double silindirHacmi, double vergisizTutar)
+//    {
+//        double otv = 0.0;
+//        double kdv = 0.20;
+        
+//        if(motorTipi == "içten yanmalı")
+//        {
+//            if(silindirHacmi <= 1600)
+//            {
+//                if (vergisizTutar <= 1840000) otv = 0.45;
+//                else if (184000 < vergisizTutar && vergisizTutar <= 220000) otv = 0.50;
+//                else if (222000 < vergisizTutar && vergisizTutar <= 250000) otv = 0.60;
+//                else if (250000 < vergisizTutar && vergisizTutar <= 280000) otv = 0.70;
+//                else otv = 0.80;
+//            }
+//            else if(1600 < silindirHacmi && silindirHacmi <= 2000)
+//            {
+//                otv = (vergisizTutar <= 170000) ? 1.30 : 1.50
+//            }
+//            else
+//            {
+//                otv = 2.20;
+//            }
+            
+//        }
+//        else if(motorTipi == "elektrikli")
+//        {
+//            if (silindirHacmi == 160)
+//            {
+//                otv = (vergisizTutar <= 700000) ? 0.10 : 0.40;
+//            }
+//            else
+//            {
+//                otv = (vergisizTutar <= 750000) ? 0.50 : 0.60;
+//            }
+//        }
+//        else
+//        {
+//            return -1;
+//        }
+//        double otvliTutar = vergisizTutar * (1 + otv);
+//        return otvliTutar * (1 + kdv);
+//    }
+//}
 #endregion
