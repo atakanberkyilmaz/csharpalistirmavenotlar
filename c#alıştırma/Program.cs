@@ -448,4 +448,107 @@ abstract class Kisi //sadece ortak özellikleri tutsun istiyorsak abstract
 
 
 }
+public interface IUrunService
+{
+    Urun[] getTumUrunler();
+    void UrunEkle(IUrunService eklenecekUrun);
+}
+public class UrunService : IUrunService
+{
+    public Urun[] getTumUrunler()
+    {
+        throw new NotImplementedException();
+    }
+    public void UrunEkle(UrunService eklenecekUrun)
+    {
+        throw new NotImplementedException();
+    }
+}
+public class A
+{
+    public A()
+    {
+
+    }
+    public A(int id)
+    {
+
+    }
+    public int Id { get; set; }
+
+    public virtual void Hesapla()
+    {
+        throw new NotImplementedException();
+    }
+
+
+}
+
+#endregion
+#region Generic
+public staticx bool EsitMi<T>(T a, T b)
+{
+    return a.Equals(b);
+}
+
+class Urun<TKey>
+{
+    public TKey Id { get; set; }
+    public string Ad { get; set; }
+    public TKey Fiyat { get; set; }
+
+}
+public interface IUrunDepo<T>
+{
+    T[] GetUrunler();
+    T GetUrunById();
+
+}
+public class Sekil
+{
+    public int Adi { get; set;}
+    public int KenarSayisi { get; set; }
+}
+public interface ISekil<T> where T : Sekil
+{
+
+}
+public class Kisi<T>
+{
+    public T Id { get; set; }
+
+    public Kisi5(int id)
+    {
+
+    }
+}
+#endregion
+#region Static
+public static class MyExtentions // staticlik bulaşıcıdır. Eğer bir erişim belirtecine yazıyorsak hepsine static yazmalıyız
+{
+    static public string Ad { get; set; }
+    public static void Hesapla()
+    {
+
+    }
+public class Ogrenci
+    {
+        public const string Tur = "asd"; // Ogrenci. ile erişilir yani constlar da static çalışır
+        static Ogrenci()
+        {
+            Console.WriteLine();
+        } //parametre alamaz
+
+        public int Id { get; set; }
+        public static string Ad { get; set; } // Ogrenci turune özgüdür.
+        public void Hesapla()
+        {
+
+        }
+        public static void Topla()
+        {
+
+        }//ogrenci. dediğimizde gelmez! Ogrenci. dediğimşzde gelir çünkü nesne oluştmamıza yani nesne instanceına gerek duymaz. static metotlarda sadece static şeylere erişebiliriz ancak static olmayanlardan da staticlere ulaşabiliriz.
+    }
+}
 #endregion
